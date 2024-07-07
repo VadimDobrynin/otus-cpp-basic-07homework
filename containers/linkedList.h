@@ -12,6 +12,11 @@ class MyLinkedList : public IContainers<T>{
 public:
     MyLinkedList(): nextObject{nullptr}, val{0}, count_elements{0}{}
     MyLinkedList(T value): nextObject{nullptr},count_elements{1}, val{value}{}
+    MyLinkedList(MyLinkedList &myLinkedList){
+        for(size_t i = 0; i < myLinkedList.size(); i++){
+            this->push_back(myLinkedList[i]);
+        }
+    }
     void push_back(T) override;
     T operator[](size_t) override;
     bool erase(size_t) override;

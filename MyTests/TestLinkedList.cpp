@@ -111,6 +111,20 @@ TEST(LinkedList, DELETE_ALL_ELEMENTS_ADD_ALL_ELEMENTS){
     }
 }
 
+TEST(LinkedList, COPY){
+    MyLinkedList<int> linkedList;
+    for(int i = 0; i < 100; i++){
+        linkedList.push_back(i);
+    }
+    MyLinkedList<int> linkedList2(linkedList);
+    ASSERT_EQ(linkedList.size(),linkedList2.size());
+    for(int i = 0; i < linkedList.size(); i++){
+        ASSERT_EQ(linkedList[i], linkedList2[i]);
+    }
+
+
+}
+
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);

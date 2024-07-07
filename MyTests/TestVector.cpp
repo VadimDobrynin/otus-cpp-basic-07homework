@@ -95,6 +95,20 @@ TEST(Vector, DELETE_ALL_ELEMENTS){
     ASSERT_EQ(vector.size(), 0);
 }
 
+TEST(Vector, COPY){
+    MyVector<int> vector;
+    for(int i = 0; i < 100; i++){
+        vector.push_back(i);
+    }
+    MyVector<int> vector2(vector);
+    ASSERT_EQ(vector.size(),vector2.size());
+    for(int i = 0; i < vector.size(); i++){
+        ASSERT_EQ(vector[i], vector2[i]);
+    }
+
+
+}
+
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);

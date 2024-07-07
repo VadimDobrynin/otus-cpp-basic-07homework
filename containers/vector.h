@@ -11,6 +11,11 @@ template<typename T>
 class MyVector : public IContainers<T>{
 public:
     MyVector() : adr{nullptr}, size_reserved{2}, count{0} {}
+    MyVector(MyVector &myVector){
+        for(size_t i = 0; i < myVector.size(); i++){
+            this->push_back(myVector[i]);
+        }
+    }
     void push_back(T) override;
     T operator[](size_t) override;
     bool erase(size_t) override;
