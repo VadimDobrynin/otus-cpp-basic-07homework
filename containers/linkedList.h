@@ -13,6 +13,9 @@ public:
     MyLinkedList(): nextObject{nullptr}, val{0}, count_elements{0}{}
     MyLinkedList(T value): nextObject{nullptr},count_elements{1}, val{value}{}
     MyLinkedList(MyLinkedList &myLinkedList){
+        val = 0;
+        count_elements = 0;
+        nextObject = nullptr;
         for(size_t i = 0; i < myLinkedList.size(); i++){
             this->push_back(myLinkedList[i]);
         }

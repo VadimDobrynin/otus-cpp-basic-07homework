@@ -121,12 +121,10 @@ TEST(LinkedList, COPY){
     for(int i = 0; i < linkedList.size(); i++){
         ASSERT_EQ(linkedList[i], linkedList2[i]);
     }
-
-
 }
 
 
-int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+//int main(int argc, char** argv) {
+//    testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+//}

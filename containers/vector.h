@@ -12,6 +12,9 @@ class MyVector : public IContainers<T>{
 public:
     MyVector() : adr{nullptr}, size_reserved{2}, count{0} {}
     MyVector(MyVector &myVector){
+        adr = nullptr;
+        size_reserved = 2;
+        count = 0;
         for(size_t i = 0; i < myVector.size(); i++){
             this->push_back(myVector[i]);
         }

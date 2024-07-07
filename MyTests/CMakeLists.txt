@@ -19,16 +19,17 @@ link_directories(${EXTERNAL_INSTALL_LOCATION}/lib)
 #---------------------------------------------------------------------------------
 
 set(SOURCE_FILES
-        TestVector.cpp
-        TestLinkedList.cpp
+        Vector_tests.cpp
+        LinkedList_tests.cpp
+        Main.cpp
 )
 
-foreach (test ${SOURCE_FILES})
-    string(REPLACE ".cpp" "" target ${test})
-    add_executable(${target} ${test})
-    target_include_directories(${target}
-            PUBLIC ${CMAKE_SOURCE_DIR}/containers
-    )
-    add_dependencies(${target} googletest)
-    target_link_libraries(${target} containers gtest gtest_main pthread)
-endforeach ()
+#foreach (test ${SOURCE_FILES})
+#    string(REPLACE ".cpp" "" target ${test})
+add_executable(containers_tests ${SOURCE_FILES})
+target_include_directories(containers_tests
+        PUBLIC ${CMAKE_SOURCE_DIR}/containers
+)
+add_dependencies(containers_tests googletest)
+target_link_libraries(containers_tests containers gtest gtest_main pthread)
+#endforeach ()
