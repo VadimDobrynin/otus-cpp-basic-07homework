@@ -56,6 +56,12 @@ T MyLinkedList<T>::operator[] (size_t index) {
 template <typename T>
 bool MyLinkedList<T>::erase(size_t index) {
     if(index < count_elements){
+        if(count_elements == 1){
+            this->count_elements = 0;
+            this->nextObject = nullptr;
+            this->val = 0;
+            return true;
+        }
         auto tmp_prev = get(index - 1);
         auto tmp_index = get(index);
         if(tmp_prev == nullptr) {
