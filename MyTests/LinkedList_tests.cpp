@@ -10,7 +10,7 @@ TEST(LinkedList, Empty) {
     ASSERT_EQ(linkedList.size(), 0);
 }
 
-TEST(LinkedList, ADD_TO_END){
+TEST(LinkedList, PUSH_BACK){
     MyLinkedList<int> linkedList;
     for(int i = 0; i < 100; i++){
         linkedList.push_back(i);

@@ -10,7 +10,7 @@ TEST(Vector, Empty) {
     ASSERT_EQ(vector.size(), 0);
 }
 
-TEST(Vector, ADD_TO_END){
+TEST(Vector, PUSH_BACK){
     MyVector<int> vector;
     for(int i = 0; i < 100; i++){
         vector.push_back(i);
